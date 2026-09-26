@@ -1,0 +1,28 @@
+{
+  "name": "@agrichain/backend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "seed:dev": "node src/scripts/seedDevelopment.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/db/database.js && node --check src/routes/authRoutes.js && node --check src/routes/dashboardRoutes.js && node --check src/middleware/requireAuth.js && node --check src/schemas/authSchemas.js && node --check src/schemas/dashboardSchemas.js && node --check src/services/authService.js && node --check src/services/dashboardService.js && node --check src/services/uploadService.js && node --check src/scripts/seedDevelopment.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.4.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.4"
+  }
+}
